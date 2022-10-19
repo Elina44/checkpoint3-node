@@ -1,4 +1,8 @@
 require('dotenv').config();
+const mysql = require("mysql2/promise");
+
+const port = process.env.APP_PORT ?? 5000;
+
 
 const express = require('express');
 const cors = require('cors');
@@ -22,5 +26,7 @@ app.use('/api', api);
 
 app.use(notFound);
 app.use(errorHandler);
+
+
 
 module.exports = app;

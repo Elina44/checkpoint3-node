@@ -1,3 +1,14 @@
+const database = require("../../database");
+
 module.exports = (req, res) => {
   // your code here !
+  database
+    .query("select * from track")
+    .then(([track]) => {
+      res.json(track);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error retrieving data from database");
+    }); 
 };
