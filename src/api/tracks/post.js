@@ -11,7 +11,7 @@ module.exports = (req, res) => {
     )
     .then(([result]) => {
       // wait for it
-      res.location(`api/track/${result.insertId}`).sendStatus(201);
+      res.location(`api/tracks/${result.insertId}`).sendStatus(201);
     })
     .catch((err) => {
       console.error(err);
